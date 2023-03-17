@@ -1,7 +1,7 @@
 import { promises } from "fs";
 import { dirname, isAbsolute, join } from "path";
 
-export class fileService {
+export class FileService {
     private async isExist(path: string) {
         try {
             await promises.stat(path);
