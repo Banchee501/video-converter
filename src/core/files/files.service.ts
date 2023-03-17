@@ -15,12 +15,12 @@ export class FileService {
         if (!isAbsolute(path)) {
             path = join(__dirname + '/' + path);
         }
-        return join(dirname(path)) + '/' + name + '.' + ext;
+        return join(dirname(path) + '/' + name + '.' + ext);
     }
 
     async deleteFileIfExists(path: string) {
         if (await this.isExist(path)) {
-            promises.unlink(path)
+            promises.unlink(path);
         }
     }
 }

@@ -18,7 +18,7 @@ export class FfmpegExecutor extends CommandExecutor<IFfmpegInput> {
     protected async prompt(): Promise<IFfmpegInput> {
         const width = await this.promptService.input<number>('Width', 'number');
         const height = await this.promptService.input<number>('Height', 'number');
-        const path = await this.promptService.input<string>('Path', 'input');
+        const path = await this.promptService.input<string>('Path to files', 'input');
         const name = await this.promptService.input<string>('Name', 'input');
         return { width, height, path, name }
     }
